@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @section %>
+
+<p>
+  <strong>Course:</strong>
+  <%= @section.course.prefix.name %> <%= @section.course.number %>
+</p>
+
+<p>
+  <strong>Students:</strong>
+</p>
+
+<ul>
+  <% @section.students.each do |student| %>
+    <li><%= student.name %> (ID: <%= student.student_id %>)</li>
+  <% end %>
+</ul>
+
+<div>
+  <%= link_to "Edit this section", edit_section_path(@section) %> |
+  <%= link_to "Back to sections", sections_path %>
+
+  <%= button_to "Destroy this section", @section, method: :delete %>
+</div>

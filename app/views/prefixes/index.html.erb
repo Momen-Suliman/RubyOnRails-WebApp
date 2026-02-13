@@ -1,0 +1,28 @@
+<style>
+
+    body {
+        background-image: url('<%= image_url "Aerospace_Bldg.jpg" %>');
+        background-size: cover; 
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-color: #121212; 
+        color: white; 
+    }
+</style>
+
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Prefixes" %>
+
+<h1>Prefixes</h1>
+
+<div id="prefixes">
+  <% @prefixes.each do |prefix| %>
+    <div>
+      <%= link_to prefix.name, prefix_path(prefix) %>
+      <hr>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New prefix", new_prefix_path %>

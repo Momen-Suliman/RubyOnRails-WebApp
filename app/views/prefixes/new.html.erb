@@ -1,0 +1,11 @@
+<% content_for :title, "New prefix" %>
+
+<h1>New prefix</h1>
+
+<%= render "form", prefix: @prefix %>
+
+<br>
+
+<div>
+  <%= link_to "Back to prefixes", prefixes_path %>
+</div>

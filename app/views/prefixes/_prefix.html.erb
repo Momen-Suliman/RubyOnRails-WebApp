@@ -1,0 +1,22 @@
+<div id="<%= dom_id prefix %>">
+  <p>
+    <strong>Name:</strong>
+    <%= prefix.name %>
+  </p>
+
+  <div>
+    <strong>Courses:</strong>
+    <% if prefix.courses.any? %>
+      <ul>
+        <% prefix.courses.each do |course| %>
+          <li>
+            <%= link_to "#{prefix.name} #{course.number}", course_path(course) %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No courses for this prefix yet.</p>
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Student ID:</strong>
+  <%= @student.student_id %>
+</p>
+
+<div>
+  <strong>Sections Enrolled:</strong>
+  <% if @student.sections.any? %>
+    <ul>
+      <% @student.sections.each do |section| %>
+        <li>
+          <%= section.course.prefix.name %> <%= section.course.number %> - Section <%= section.section_number %>
+          <%= link_to "View", section_path(section) %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Not enrolled in any sections.</p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Edit this student", edit_student_path(@student) %> |
+  <%= link_to "Back to students", students_path %>
+
+  <%= button_to "Destroy this student", @student, method: :delete %>
+</div>

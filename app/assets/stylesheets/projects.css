@@ -1,0 +1,43 @@
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  color: #333;
+  font-size: 1rem;
+}
+
+.checkbox-list {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.checkbox-item {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.checkbox-item:hover {
+  background-color: #f5f5f5;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

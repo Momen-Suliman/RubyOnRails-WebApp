@@ -1,0 +1,28 @@
+<style>
+
+    body {
+        background-image: url('<%= image_url "Aerospace_Bldg.jpg" %>');
+        background-size: cover; 
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-color: #121212; 
+        color: white; 
+    }
+</style>
+
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Courses" %>
+
+<h1>Courses</h1>
+
+<div id="courses">
+  <% @courses.each do |course| %>
+    <%= render course %>
+    <p>
+      <%= link_to "Show this course", course %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New course", new_course_path %>

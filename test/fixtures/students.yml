@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Alice
+  student_id: 100001
+
+two:
+  name: Bob
+  student_id: 100002

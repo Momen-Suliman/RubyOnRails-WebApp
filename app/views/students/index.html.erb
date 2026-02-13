@@ -1,0 +1,28 @@
+<style>
+
+    body {
+        background-image: url('<%= image_url "Aerospace_Bldg.jpg" %>');
+        background-size: cover; 
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-color: #121212; 
+        color: white; 
+    }
+</style>
+
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Students" %>
+
+<h1>Students</h1>
+
+<div id="students">
+  <% @students.each do |student| %>
+    <li><%= student.name %> (ID: <%= student.student_id %>)</li>
+    <p>
+      <%= link_to "Show this student", student %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New student", new_student_path %>
