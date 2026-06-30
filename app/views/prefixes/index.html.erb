@@ -1,28 +1,33 @@
-<style>
-
-    body {
-        background-image: url('<%= image_url "Aerospace_Bldg.jpg" %>');
-        background-size: cover; 
-        background-attachment: fixed; 
-        background-repeat: no-repeat;
-        background-color: #121212; 
-        color: white; 
-    }
-</style>
-
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Prefixes" %>
 
-<h1>Prefixes</h1>
+<div class="resource-page">
+  <p class="notice"><%= notice %></p>
 
-<div id="prefixes">
-  <% @prefixes.each do |prefix| %>
+  <div class="page-header">
     <div>
-      <%= link_to prefix.name, prefix_path(prefix) %>
-      <hr>
+      <h1>Prefixes</h1>
+      <p>Keep course subject prefixes organized.</p>
+    </div>
+    <%= link_to "New Prefix", new_prefix_path, class: "button primary" %>
+  </div>
+
+  <% if @prefixes.any? %>
+    <div class="resource-list" id="prefixes">
+      <% @prefixes.each do |prefix| %>
+        <div class="resource-card">
+          <h3><%= prefix.name %></h3>
+          <p><%= pluralize(prefix.courses.count, "course") %> linked to this prefix.</p>
+          <div class="resource-actions">
+            <%= link_to "View", prefix_path(prefix), class: "button" %>
+            <%= link_to "Edit", edit_prefix_path(prefix), class: "button secondary" %>
+            <%= button_to "Delete", prefix_path(prefix), method: :delete, data: { turbo_confirm: "Delete this prefix?" }, class: "button danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      No prefixes have been added yet.
     </div>
   <% end %>
 </div>
-
-<%= link_to "New prefix", new_prefix_path %>

@@ -1,11 +1,12 @@
 <% content_for :title, "New prefix" %>
 
-<h1>New prefix</h1>
+<div class="resource-page">
+  <div class="page-header">
+    <div>
+      <h1>New Prefix</h1>
+      <p>Create a new course prefix.</p>
+    </div>
+  </div>
 
-<%= render "form", prefix: @prefix %>
-
-<br>
-
-<div>
-  <%= link_to "Back to prefixes", prefixes_path %>
+  <%= render "form", prefix: @prefix %>
 </div>
