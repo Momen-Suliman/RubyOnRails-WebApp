@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Course details" %>
 
-<%= render @course %>
+<div class="resource-page">
+  <p class="notice"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this course", edit_course_path(@course) %> |
-  <%= link_to "Back to courses", courses_path %>
+  <div class="page-header">
+    <div>
+      <h1><%= "#{@course.prefix.name} #{@course.number}" %></h1>
+      <p>Course details and quick actions.</p>
+    </div>
+    <div class="resource-actions">
+      <%= link_to "Back", courses_path, class: "button secondary" %>
+      <%= link_to "Edit this course", edit_course_path(@course), class: "button" %>
+      <%= button_to "Destroy this course", @course, method: :delete, data: { turbo_confirm: "Delete this course?" }, class: "button danger" %>
+    </div>
+  </div>
 
-  <%= button_to "Destroy this course", @course, method: :delete %>
+  <div class="form-card">
+    <div class="details-list">
+      <div><strong>Prefix:</strong> <%= @course.prefix.name %></div>
+      <div><strong>Number:</strong> <%= @course.number %></div>
+      <div><strong>Syllabus:</strong> <%= simple_format(@course.syllabus.to_s) %></div>
+    </div>
+  </div>
 </div>

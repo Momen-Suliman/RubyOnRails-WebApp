@@ -1,8 +1,7 @@
-<%= form_with(model: prefix) do |form| %>
+<%= form_with(model: prefix, class: "form-card") do |form| %>
   <% if prefix.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(prefix.errors.count, "error") %> prohibited this prefix from being saved:</h2>
-
+    <div style="color: red; margin-bottom: 12px;">
+      <h2><%= pluralize(prefix.errors.count, "error") %> prohibited this Prefix from being saved:</h2>
       <ul>
         <% prefix.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,12 +10,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, placeholder: "e.g. CS" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.submit class: "button primary" %>
+    <%= link_to "Cancel", prefixes_path, class: "button secondary" %>
   </div>
 <% end %>

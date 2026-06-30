@@ -1,12 +1,12 @@
 <% content_for :title, "Editing course" %>
 
-<h1>Editing course</h1>
+<div class="resource-page">
+  <div class="page-header">
+    <div>
+      <h1>Edit Course</h1>
+      <p>Update the course details below.</p>
+    </div>
+  </div>
 
-<%= render "form", course: @course %>
-
-<br>
-
-<div>
-  <%= link_to "Show this course", @course %> |
-  <%= link_to "Back to courses", courses_path %>
+  <%= render "form", course: @course %>
 </div>

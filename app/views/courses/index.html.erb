@@ -1,28 +1,33 @@
-<style>
-
-    body {
-        background-image: url('<%= image_url "Aerospace_Bldg.jpg" %>');
-        background-size: cover; 
-        background-attachment: fixed; 
-        background-repeat: no-repeat;
-        background-color: #121212; 
-        color: white; 
-    }
-</style>
-
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Courses" %>
 
-<h1>Courses</h1>
+<div class="resource-page">
+  <p class="notice"><%= notice %></p>
 
-<div id="courses">
-  <% @courses.each do |course| %>
-    <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
+  <div class="page-header">
+    <div>
+      <h1>Courses</h1>
+      <p>Browse and manage your course catalog.</p>
+    </div>
+    <%= link_to "New course", new_course_path, class: "button primary" %>
+  </div>
+
+  <% if @courses.any? %>
+    <div class="resource-list" id="courses">
+      <% @courses.each do |course| %>
+        <div class="resource-card">
+          <h3><%= "#{course.prefix.name} #{course.number}" %></h3>
+          <p><%= truncate(course.syllabus.to_s, length: 140) %></p>
+          <div class="resource-actions">
+            <%= link_to "Show this course", course_path(course), class: "button" %>
+            <%= link_to "Edit this course", edit_course_path(course), class: "button secondary" %>
+            <%= button_to "Destroy this course", course_path(course), method: :delete, data: { turbo_confirm: "Delete this course?" }, class: "button danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      No courses available yet. Create the first one to get started.
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New course", new_course_path %>

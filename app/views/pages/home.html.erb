@@ -1,13 +1,91 @@
-<style>
+<div class="resource-page">
+  <div class="page-header">
+    <div>
+      <h1>Dashboard</h1>
+      <p>A quick overview of Subjects, Courses, Sections, and Students.</p>
+    </div>
+    <%= link_to "Manage Students", students_path, class: "button primary" %>
+  </div>
 
-    body {
-        background-image: url('<%= image_url "Aerospace_Bldg.jpg" %>');
-        background-size: cover; 
-        background-attachment: fixed; 
-        background-repeat: no-repeat;
-        background-color: #121212; 
-        color: white; 
-    }
-</style>
+  <div class="dashboard-grid">
+    <section class="dashboard-card">
+      <div class="dashboard-heading">
+        <h3>Students</h3>
+        <span class="count-pill"><%= @students.count %></span>
+      </div>
+      <p>Enrolled students</p>
+      <ul class="mini-list">
+        <% @students.each do |student| %>
+          <li class="mini-item">
+            <span><%= student.name %></span>
+            <small><%= pluralize(student.sections.count, "section") %></small>
+          </li>
+        <% end %>
+      </ul>
+      <div class="resource-actions">
+        <%= link_to "View all", students_path, class: "button secondary" %>
+        <%= link_to "Add student", new_student_path, class: "button" %>
+      </div>
+    </section>
 
-<h1>Course Manager Home Page</h1>
+    <section class="dashboard-card">
+      <div class="dashboard-heading">
+        <h3>Courses</h3>
+        <span class="count-pill"><%= @courses.count %></span>
+      </div>
+      <p>Available courses</p>
+      <ul class="mini-list">
+        <% @courses.each do |course| %>
+          <li class="mini-item">
+            <span><%= "#{course.prefix.name} #{course.number}" %></span>
+            <small><%= truncate(course.syllabus.to_s, length: 36) %></small>
+          </li>
+        <% end %>
+      </ul>
+      <div class="resource-actions">
+        <%= link_to "View all", courses_path, class: "button secondary" %>
+        <%= link_to "Add course", new_course_path, class: "button" %>
+      </div>
+    </section>
+
+    <section class="dashboard-card">
+      <div class="dashboard-heading">
+        <h3>Sections</h3>
+        <span class="count-pill"><%= @sections.count %></span>
+      </div>
+      <p>Available sections</p>
+      <ul class="mini-list">
+        <% @sections.each do |section| %>
+          <li class="mini-item">
+            <span><%= "#{section.course.prefix.name} #{section.course.number} • #{section.section_number}" %></span>
+            <small><%= pluralize(section.students.count, "student") %></small>
+          </li>
+        <% end %>
+      </ul>
+      <div class="resource-actions">
+        <%= link_to "View all", sections_path, class: "button secondary" %>
+        <%= link_to "Add section", new_section_path, class: "button" %>
+      </div>
+    </section>
+
+    <section class="dashboard-card">
+      <div class="dashboard-heading">
+        <h3>Subjects</h3>
+        <span class="count-pill"><%= @prefixes.count %></span>
+      </div>
+      <p>Available subjects</p>
+      <ul class="mini-list">
+        <% @prefixes.each do |prefix| %>
+          <li class="mini-item">
+            <span><%= prefix.name %></span>
+            <small><%= pluralize(prefix.courses.count, "course") %></small>
+          </li>
+        <% end %>
+      </ul>
+      <div class="resource-actions">
+        <%= link_to "View all", prefixes_path, class: "button secondary" %>
+        <%= link_to "Add prefix", new_prefix_path, class: "button" %>
+      </div>
+    </section>
+  </div>
+</div>

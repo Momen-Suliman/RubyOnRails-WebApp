@@ -22,6 +22,7 @@ class PrefixesController < ApplicationController
   # POST /prefixes or /prefixes.json
   def create
     @prefix = Prefix.new(prefix_params)
+    @prefix.skip_uniqueness_validation = true
 
     respond_to do |format|
       if @prefix.save
@@ -36,6 +37,8 @@ class PrefixesController < ApplicationController
 
   # PATCH/PUT /prefixes/1 or /prefixes/1.json
   def update
+    @prefix.skip_uniqueness_validation = true
+
     respond_to do |format|
       if @prefix.update(prefix_params)
         format.html { redirect_to @prefix, notice: "Prefix was successfully updated.", status: :see_other }

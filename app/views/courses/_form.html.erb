@@ -1,8 +1,7 @@
-<%= form_with(model: course) do |form| %>
+<%= form_with(model: course, class: "form-card") do |form| %>
   <% if course.errors.any? %>
-    <div style="color: red">
+    <div style="color: red; margin-bottom: 12px;">
       <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
       <ul>
         <% course.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,22 +10,23 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :prefix_id, "Prefix" %>
-    <%= form.collection_select :prefix_id, Prefix.all, :id, :name %>
+    <%= form.text_field :prefix_id, placeholder: "Enter prefix ID" %>
   </div>
 
-  <div>
-    <%= form.label :number, style: "display: block" %>
+  <div class="field">
+    <%= form.label :number, "Number" %>
     <%= form.number_field :number %>
   </div>
 
-  <div>
-    <%= form.label :syllabus, style: "display: block" %>
-    <%= form.textarea :syllabus %>
+  <div class="field">
+    <%= form.label :syllabus, "Syllabus" %>
+    <%= form.textarea :syllabus, placeholder: "Add a brief course overview" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.submit class: "button primary" %>
+    <%= link_to "Cancel", courses_path, class: "button secondary" %>
   </div>
 <% end %>

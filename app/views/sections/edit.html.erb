@@ -1,12 +1,12 @@
-<% content_for :title, "Editing section" %>
+<% content_for :title, "Editing Section" %>
 
-<h1>Editing section</h1>
+<div class="resource-page">
+  <div class="page-header">
+    <div>
+      <h1>Edit Section</h1>
+      <p>Update the section details below.</p>
+    </div>
+  </div>
 
-<%= render "form", section: @section %>
-
-<br>
-
-<div>
-  <%= link_to "Show this section", @section %> |
-  <%= link_to "Back to sections", sections_path %>
+  <%= render "form", section: @section %>
 </div>

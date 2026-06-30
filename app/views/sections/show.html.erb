@@ -1,25 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Section details" %>
 
-<%= render @section %>
+<div class="resource-page">
+  <p class="notice"><%= notice %></p>
 
-<p>
-  <strong>Course:</strong>
-  <%= @section.course.prefix.name %> <%= @section.course.number %>
-</p>
+  <div class="page-header">
+    <div>
+      <h1><%= "#{@section.course.prefix.name} #{@section.course.number} • Section #{@section.section_number}" %></h1>
+      <p>Quick view of the enrolled students.</p>
+    </div>
+    <div class="resource-actions">
+      <%= link_to "Back", sections_path, class: "button secondary" %>
+      <%= link_to "Edit this section", edit_section_path(@section), class: "button" %>
+      <%= button_to "Destroy this section", @section, method: :delete, data: { turbo_confirm: "Delete this section?" }, class: "button danger" %>
+    </div>
+  </div>
 
-<p>
-  <strong>Students:</strong>
-</p>
+  <div class="form-card">
+    <div class="details-list">
+      <div><strong>Course:</strong> <%= "#{@section.course.prefix.name} #{@section.course.number}" %></div>
+      <div><strong>Section:</strong> <%= @section.section_number %></div>
+    </div>
 
-<ul>
-  <% @section.students.each do |student| %>
-    <li><%= student.name %> (ID: <%= student.student_id %>)</li>
-  <% end %>
-</ul>
-
-<div>
-  <%= link_to "Edit this section", edit_section_path(@section) %> |
-  <%= link_to "Back to sections", sections_path %>
-
-  <%= button_to "Destroy this section", @section, method: :delete %>
+    <h3>Students</h3>
+    <% if @section.students.any? %>
+      <ul>
+        <% @section.students.each do |student| %>
+          <li><%= link_to "#{student.name} (ID: #{student.student_id})", student_path(student) %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No students enrolled in this section yet.</p>
+    <% end %>
+  </div>
 </div>
