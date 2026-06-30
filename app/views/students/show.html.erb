@@ -1,34 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "Student details" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+<div class="resource-page">
+  <p class="notice"><%= notice %></p>
 
-<p>
-  <strong>Student ID:</strong>
-  <%= @student.student_id %>
-</p>
+  <div class="page-header">
+    <div>
+      <h1><%= @student.name %></h1>
+      <p>Student ID: <%= @student.student_id %></p>
+    </div>
+    <div class="resource-actions">
+      <%= link_to "Back", students_path, class: "button secondary" %>
+      <%= link_to "Edit", edit_student_path(@student), class: "button" %>
+      <%= button_to "Delete", @student, method: :delete, data: { turbo_confirm: "Delete this student?" }, class: "button danger" %>
+    </div>
+  </div>
 
-<div>
-  <strong>Sections Enrolled:</strong>
-  <% if @student.sections.any? %>
-    <ul>
-      <% @student.sections.each do |section| %>
-        <li>
-          <%= section.course.prefix.name %> <%= section.course.number %> - Section <%= section.section_number %>
-          <%= link_to "View", section_path(section) %>
-        </li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>Not enrolled in any sections.</p>
-  <% end %>
-</div>
-
-<div>
-  <%= link_to "Edit this student", edit_student_path(@student) %> |
-  <%= link_to "Back to students", students_path %>
-
-  <%= button_to "Destroy this student", @student, method: :delete %>
+  <div class="form-card">
+    <h3>Enrolled Sections</h3>
+    <% if @student.sections.any? %>
+      <ul>
+        <% @student.sections.each do |section| %>
+          <li>
+            <%= link_to "#{section.course.prefix.name} #{section.course.number} • Section #{section.section_number}", section_path(section) %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>This student is not enrolled in any sections yet.</p>
+    <% end %>
+  </div>
 </div>

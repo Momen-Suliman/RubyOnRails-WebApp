@@ -1,10 +1,339 @@
 /*
  * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+  --navy: #002147;
+  --navy-soft: #0f3b67;
+  --accent-red: #d11242;
+  --accent-red-soft: rgba(209, 18, 66, 0.14);
+  --surface: #ffffff;
+  --surface-muted: #7a97c0;
+  --text: #14213d;
+  --text-soft: #f08989;
+  --border: #dce3ee;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  background-image: url("Aerospace_Bldg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#root {
+  display: block;
+}
+
+body > .resource-page {
+  padding: 24px;
+}
+
+.resource-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+}
+
+.resource-page,
+.dashboard-card,
+.resource-card,
+.form-card,
+.empty-state {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--accent-red-soft);
+}
+
+.page-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+  color: var(--navy);
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.notice {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  background: rgba(209, 18, 66, 0.08);
+  color: var(--accent-red);
+  border-radius: 8px;
+  border: 1px solid rgba(209, 18, 66, 0.16);
+}
+
+.resource-list {
+  display: grid;
+  gap: 14px;
+}
+
+.resource-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-red);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 6px 16px rgba(0, 33, 71, 0.07);
+}
+
+.resource-card h3,
+.resource-card h4 {
+  margin: 0 0 6px;
+}
+
+.resource-card p,
+.resource-card li {
+  color: #4b5563;
+  margin: 0;
+}
+
+.resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.button,
+.button_to input,
+form input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--navy);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover,
+.button_to input:hover,
+form input[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 33, 71, 0.12);
+}
+
+.button.primary,
+.button_to input[type="submit"],
+form input[type="submit"] {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #fff;
+}
+
+.button.secondary {
+  background: var(--surface-muted);
+}
+
+.button.danger {
+  background: #fff1f4;
+  border-color: #f5bac8;
+  color: var(--accent-red);
+}
+
+.empty-state {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 33, 71, 0.06);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.checkbox-group {
+  display: grid;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.details-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.details-list strong {
+  display: inline-block;
+  min-width: 120px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dashboard-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0, 33, 71, 0.06);
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.dashboard-heading h3 {
+  margin: 0;
+  color: var(--navy);
+}
+
+.count-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 4px 8px;
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.mini-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mini-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.mini-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mini-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.mini-item:last-child {
+  border-bottom: none;
+}
+
+.mini-item span {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.mini-item small {
+  color: var(--text-soft);
+}
+
+@media (max-width: 640px) {
+  .resource-page {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

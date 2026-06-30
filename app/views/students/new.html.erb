@@ -1,11 +1,12 @@
-<% content_for :title, "New student" %>
+<% content_for :title, "New Student" %>
 
-<h1>New student</h1>
+<div class="resource-page">
+  <div class="page-header">
+    <div>
+      <h1>New Student</h1>
+      <p>Create a student profile and enroll them.</p>
+    </div>
+  </div>
 
-<%= render "form", student: @student %>
-
-<br>
-
-<div>
-  <%= link_to "Back to students", students_path %>
+  <%= render "form", student: @student %>
 </div>
