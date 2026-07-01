@@ -14,7 +14,7 @@ class SectionsTest < ApplicationSystemTestCase
     visit sections_url
     click_on "New section"
 
-    fill_in "Course", with: @section.course_id
+    fill_in "Course", with: "#{@section.course.prefix.name} #{@section.course.number}"
     click_on "Create Section"
 
     assert_text "Section was successfully created"
@@ -25,7 +25,7 @@ class SectionsTest < ApplicationSystemTestCase
     visit section_url(@section)
     click_on "Edit this section", match: :first
 
-    fill_in "Course", with: @section.course_id
+    fill_in "Course", with: "#{@section.course.prefix.name} #{@section.course.number}"
     click_on "Update Section"
 
     assert_text "Section was successfully updated"

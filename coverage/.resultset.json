@@ -5,10 +5,19 @@
         "lines": [
           1,
           1,
+          1,
+          1,
+          1,
           null,
           1,
+          0,
+          null,
+          0,
+          null,
+          null,
           1,
-          1,
+          2,
+          null,
           null
         ]
       },
@@ -23,8 +32,6 @@
         "lines": [
           1,
           1,
-          null,
-          1,
           1,
           null
         ]
@@ -32,8 +39,6 @@
       "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/models/section.rb": {
         "lines": [
           1,
-          1,
-          null,
           1,
           1,
           1,
@@ -48,13 +53,22 @@
           null,
           null,
           1,
-          0,
+          20,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          16,
+          null,
+          1,
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -66,242 +80,6 @@
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/sections_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          2,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/courses_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/pages_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/prefixes_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/sections_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/students_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/pages_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/mailers/application_mailer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/courses_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          2,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/jobs/application_job.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -383,6 +161,73 @@
           null
         ]
       },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/courses_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/pages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/prefixes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/sections_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/students_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/jobs/application_job.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/pages_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/prefixes_controller.rb": {
         "lines": [
           1,
@@ -409,6 +254,87 @@
           null,
           1,
           1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/mailers/application_mailer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/courses_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
           1,
           null,
           1,
@@ -425,7 +351,87 @@
           null,
           1,
           1,
+          1,
+          2,
+          1,
           null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/sections_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           2,
@@ -461,7 +467,7 @@
         ]
       }
     },
-    "timestamp": 1782787017
+    "timestamp": 1782865739
   },
   "Unit Tests": {
     "coverage": {
@@ -469,10 +475,19 @@
         "lines": [
           1,
           1,
+          1,
+          1,
+          1,
           null,
           1,
+          0,
+          null,
+          0,
+          null,
+          null,
           1,
-          1,
+          0,
+          null,
           null
         ]
       },
@@ -487,8 +502,6 @@
         "lines": [
           1,
           1,
-          null,
-          1,
           1,
           null
         ]
@@ -497,28 +510,35 @@
         "lines": [
           1,
           1,
-          null,
           1,
           1,
-          1,
-          1,
-          null,
           1,
           null,
           1,
           null,
           1,
-          15,
+          null,
+          1,
+          10,
           null,
           null,
           1,
-          0,
+          13,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          9,
+          null,
+          1,
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -529,20 +549,135 @@
           1,
           null,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/sections_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
           null,
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
       "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/application_controller.rb": {
         "lines": [
-          0,
+          1,
           null,
-          0,
-          0
-        ],
-        "branches": {}
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/courses_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/pages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/prefixes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/sections_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/students_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
       },
       "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/courses_controller.rb": {
         "lines": [
@@ -570,7 +705,6 @@
           null,
           0,
           0,
-          0,
           null,
           0,
           0,
@@ -585,8 +719,6 @@
           null,
           null,
           0,
-          0,
-          null,
           0,
           0,
           0,
@@ -661,7 +793,6 @@
           null,
           0,
           0,
-          0,
           null,
           0,
           0,
@@ -675,93 +806,6 @@
           0,
           null,
           null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/sections_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -827,7 +871,6 @@
           0,
           0,
           0,
-          0,
           null,
           0,
           0,
@@ -841,7 +884,6 @@
           0,
           null,
           null,
-          0,
           0,
           0,
           0,
@@ -874,48 +916,6 @@
           null,
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/courses_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/pages_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/prefixes_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/sections_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/students_helper.rb": {
-        "lines": [
           0,
           0
         ],
@@ -943,6 +943,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1782783098
+    "timestamp": 1782863436
   }
 }

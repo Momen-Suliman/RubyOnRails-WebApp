@@ -20,7 +20,7 @@
           <div class="resource-actions">
             <%= link_to "Show this course", course_path(course), class: "button" %>
             <%= link_to "Edit this course", edit_course_path(course), class: "button secondary" %>
-            <%= button_to "Destroy this course", course_path(course), method: :delete, data: { turbo_confirm: "Delete this course?" }, class: "button danger" %>
+            <%= button_to "Destroy this course", course_path(course), method: :delete, form: { onclick: "return confirm('⚠️ WARNING: Deleting this will cause other data dependent on it to be deleted as well!" }, class: "button danger" %>
           </div>
         </div>
       <% end %>

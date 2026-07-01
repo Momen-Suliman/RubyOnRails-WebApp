@@ -20,7 +20,7 @@
           <div class="resource-actions">
             <%= link_to "Show this prefix", prefix_path(prefix), class: "button" %>
             <%= link_to "Edit this prefix", edit_prefix_path(prefix), class: "button secondary" %>
-            <%= button_to "Destroy this prefix", prefix_path(prefix), method: :delete, data: { turbo_confirm: "Delete this prefix?" }, class: "button danger" %>
+            <%= button_to "Destroy this prefix", prefix_path(prefix), method: :delete, form: { onclick: "return confirm('⚠️ WARNING: Deleting this will cause other data dependent on it to be deleted as well!" }, class: "button danger" %>
           </div>
         </div>
       <% end %>

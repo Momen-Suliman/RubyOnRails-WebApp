@@ -26,7 +26,6 @@ class SectionsController < ApplicationController
   # POST /sections or /sections.json
   def create
     @section = Section.new(section_params)
-    @section.skip_uniqueness_validation = true
     @courses = Course.all
     @students = Student.all
 
@@ -43,7 +42,6 @@ class SectionsController < ApplicationController
 
   # PATCH/PUT /sections/1 or /sections/1.json
   def update
-    @section.skip_uniqueness_validation = true
     @courses = Course.all
     @students = Student.all
     respond_to do |format|
@@ -75,6 +73,6 @@ class SectionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def section_params
-      params.expect(section: [ :course_id, :section_number, { student_ids: [] } ])
+      params.expect(section: [ :course_id, :section_number, :course_name, { student_ids: [] } ])
     end
 end

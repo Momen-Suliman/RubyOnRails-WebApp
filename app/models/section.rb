@@ -1,26 +1,33 @@
 class Section < ApplicationRecord
-  attr_accessor :skip_uniqueness_validation
-
   belongs_to :course
   has_and_belongs_to_many :students
-  validates :section_number, presence: true, uniqueness: { scope: :course_id, message: "has already been taken for this course" }, unless: :skip_uniqueness_validation
+  validates :section_number, presence: true, uniqueness: { scope: :course_id, message: "has already been taken for this course" }
   validates :course_id, presence: true
 
-  before_validation :assign_default_section_number, on: %i[create update], if: :allow_default_section_number?
+  attr_accessor :course_name
+
+  before_validation :assign_course_from_name, if: :course_name_present?
+
+  def course_name_present?
+    course_name.present?
+  end
+
+  def course_name
+    @course_name || (course.present? ? "#{course.prefix.name} #{course.number}" : nil)
+  end
+
+  def course_name=(value)
+    @course_name = value
+  end
 
   private
 
-  def allow_default_section_number?
-    skip_uniqueness_validation && section_number.blank?
-  end
+  def assign_course_from_name
+    return if course_id.present?
 
-  def assign_default_section_number
-    self.section_number = next_available_section_number
-  end
+    normalized_name = course_name.to_s.strip.downcase
+    return if normalized_name.blank?
 
-  def next_available_section_number
-    existing_numbers = Section.where(course_id: course_id).where.not(id: id).pluck(:section_number).compact.map(&:to_i)
-    next_number = existing_numbers.max.to_i + 1
-    next_number.to_s.rjust(3, "0")
+    self.course = Course.joins(:prefix).find_by("LOWER(CONCAT(prefixes.name, ' ', courses.number)) = ?", normalized_name)
   end
 end
