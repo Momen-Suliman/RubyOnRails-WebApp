@@ -26,8 +26,10 @@
   <body>
     <%# React navigation bar mounts here %>
     <div id="root"></div>
-    
+
     <%# Rails content goes here %>
-    <%= yield %>
+    <main class="app-shell">
+      <%= yield %>
+    </main>
   </body>
 </html>

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Set active tab based on current URL path
     const path = window.location.pathname;
     const navItems = [
       { name: "Home", path: "/home" },
@@ -18,6 +18,12 @@ const App = () => {
     if (active) {
       setActiveTab(active.name);
     }
+
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navItems = [
@@ -38,8 +44,9 @@ const App = () => {
 
   return (
     <nav
+      aria-label="Primary navigation"
       style={{
-        background: `linear-gradient(90deg, ${theme.navy} 0%, ${theme.navy} 55%, ${theme.navySoft || "#0f3b67"} 100%)`,
+        background: `linear-gradient(90deg, ${theme.navy} 0%, ${theme.navy} 55%, ${theme.navySoft} 100%)`,
         padding: "0",
         boxShadow: "0 4px 16px rgba(0,0,0,0.22)",
         fontFamily: "system-ui, -apple-system, sans-serif",
@@ -47,7 +54,6 @@ const App = () => {
         position: "sticky",
         top: 0,
         zIndex: 1000,
-        borderRadius: "12px",
         overflow: "hidden",
       }}
     >
@@ -56,32 +62,27 @@ const App = () => {
           maxWidth: "1400px",
           margin: "0 auto",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 20px",
+          flexDirection: isMobile ? "column" : "row",
+          alignItems: isMobile ? "flex-start" : "center",
+          justifyContent: isMobile ? "flex-start" : "space-between",
+          padding: isMobile ? "14px 16px 16px" : "0 20px",
+          gap: isMobile ? "10px" : "0",
         }}
       >
-        {/* Logo/Title Section */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: "12px",
-            padding: "16px 0",
+            padding: isMobile ? "0" : "16px 0",
           }}
         >
-          <div
-            style={{
-              fontSize: "28px",
-            }}
-          >
-            📚📕📘
-          </div>
+          <div style={{ fontSize: isMobile ? "24px" : "28px" }}>📚📕📘</div>
           <div>
             <h1
               style={{
                 margin: 0,
-                fontSize: "20px",
+                fontSize: isMobile ? "17px" : "20px",
                 fontWeight: "700",
                 color: "white",
                 letterSpacing: "-0.3px",
@@ -92,7 +93,7 @@ const App = () => {
             <p
               style={{
                 margin: 0,
-                fontSize: "12px",
+                fontSize: isMobile ? "11px" : "12px",
                 color: "rgba(255,255,255,0.7)",
               }}
             >
@@ -101,53 +102,53 @@ const App = () => {
           </div>
         </div>
 
-        {/* Navigation Links */}
         <div
           style={{
             display: "flex",
-            gap: "4px",
+            flexWrap: "wrap",
+            gap: "6px",
             alignItems: "center",
+            justifyContent: isMobile ? "flex-start" : "center",
           }}
         >
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.path}
-              style={{
-                color: "white",
-                textDecoration: "none",
-                padding: "28px 24px",
-                fontSize: "15px",
-                fontWeight: "500",
-                transition: "all 0.2s ease",
-                borderBottom:
-                  activeTab === item.name
+          {navItems.map((item) => {
+            const isActive = activeTab === item.name;
+            return (
+              <a
+                key={item.name}
+                href={item.path}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  padding: isMobile ? "10px 12px" : "28px 24px",
+                  fontSize: "15px",
+                  fontWeight: "500",
+                  transition: "all 0.2s ease",
+                  borderBottom: isActive
                     ? `4px solid ${theme.red}`
                     : "4px solid transparent",
-                background:
-                  activeTab === item.name ? "rgba(0,0,0,0.2)" : "transparent",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                if (activeTab !== item.name) {
-                  e.currentTarget.style.background = theme.hover;
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (activeTab !== item.name) {
-                  e.currentTarget.style.background = "transparent";
-                }
-              }}
-              onMouseDown={() => {
-                setActiveTab(item.name);
-              }}
-            >
-              {item.name}
-            </a>
-          ))}
+                  background: isActive ? "rgba(0,0,0,0.2)" : "transparent",
+                  cursor: "pointer",
+                  borderRadius: isMobile ? "999px" : "0",
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.background = theme.hover;
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.background = "transparent";
+                  }
+                }}
+                onMouseDown={() => setActiveTab(item.name)}
+              >
+                {item.name}
+              </a>
+            );
+          })}
         </div>
 
-        {/* Right side info */}
         <div
           style={{
             display: "flex",
@@ -155,13 +156,14 @@ const App = () => {
             gap: "12px",
             color: "white",
             fontSize: "13px",
+            marginTop: isMobile ? "4px" : "0",
           }}
         >
           <div
             style={{
-              padding: "8px 16px",
+              padding: "8px 12px",
               background: theme.red,
-              borderRadius: "4px",
+              borderRadius: isMobile ? "999px" : "4px",
               fontWeight: "600",
               boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
             }}
