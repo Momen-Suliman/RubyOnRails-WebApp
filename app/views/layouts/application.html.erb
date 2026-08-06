@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Course Manager" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for(:title) || "Student Management System" %></title>
+    <meta property="og:title" content="Ruby on Rails Student Management System WebApp" />
+    <meta property="og:description" content="A portfolio web application built with Ruby on Rails." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rubyonrails-crudapp.onrender.com/" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
