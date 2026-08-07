@@ -83,6 +83,62 @@
           null
         ]
       },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/pages_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/courses_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/pages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/prefixes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/sections_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/students_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/students_controller.rb": {
         "lines": [
           1,
@@ -161,58 +217,13 @@
           null
         ]
       },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/application_controller.rb": {
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/jobs/application_job.rb": {
         "lines": [
           1,
           null,
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/courses_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/pages_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/prefixes_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/sections_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/helpers/students_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/pages_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -222,6 +233,80 @@
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/prefixes_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -380,94 +465,9 @@
           null,
           null
         ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/controllers/prefixes_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          2,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/momen/Portfolio/Projects/CS3710 Full Web-App/app/jobs/application_job.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1786059309
+    "timestamp": 1786136737
   },
   "Unit Tests": {
     "coverage": {
